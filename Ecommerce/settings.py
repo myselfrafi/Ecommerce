@@ -76,19 +76,16 @@ WSGI_APPLICATION = 'Ecommerce.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/6.0/ref/settings/#databases
 
- Local MySQL Database
- DATABASES = {
+DATABASES = {
     'default': {
-         'ENGINE': 'django.db.backends.mysql',
-         'NAME': 'dj_Ecommerce_db',  #authentication_register --->Table Name 
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'dj_Ecommerce_db',  #authentication_register --->Table Name 
         'USER':'root',              #products_product  ------>Table Name
-         'PASSWORD':'Rafi@786',
-         'HOST':'localhost',
-         'PORT':3306
-     }
- }
-
-
+        'PASSWORD':'Rafi@786',
+        'HOST':'localhost',
+        'PORT':3306
+    }
+}
 
 
 # Password validation
@@ -128,18 +125,10 @@ USE_TZ = True
 
 STATIC_URL = 'static/'
 
-MEDIA_URL = '/Images/'
-MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+MEDIA_URL='Images/'
+
+MEDIA_ROOT=os.path.join(BASE_DIR,'static')
 
 STATICFILES_DIRS=[
     os.path.join(BASE_DIR,'static')
 ]
-
-# Static files root for production
-STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
-
-
-# Default primary key field type
-# https://docs.djangoproject.com/en/6.0/ref/settings/#default-auto-field
-
-DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
