@@ -1,0 +1,33 @@
+{% load static %}
+
+<!-- NavBar -->
+<header class="p-3 bg-dark text-white">
+  <div class="container">
+    <div class="d-flex flex-wrap align-items-center justify-content-between">
+
+      <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-1">
+        <li>
+          <a href="{% url 'Home-Page' %}" class="nav-link px-2 text-white">
+            <img src="{% static 'Images/logo.jpg' %}" height="30" alt="">
+          </a>
+        </li>
+        <li><a href="{% url 'Home-Page' %}" class="nav-link px-2 text-white">Home</a></li>
+        <li><a href="{% url 'about-page' %}" class="nav-link px-2 text-white">About</a></li>
+      </ul>
+
+      <!-- Search Form -->
+      <form class="d-flex" role="search" method="get" action="">
+        <input type="text" 
+               name="q" 
+               class="form-control me-3" 
+               placeholder="Search products..." 
+               aria-label="Search">
+        <button type="submit" class="btn btn-outline-light me-3">Search</button>
+        
+        <a href="{% url 'login-form' %}" class="btn btn-danger" >Logout</a>
+
+      </form>
+
+    </div>
+  </div>
+</header>

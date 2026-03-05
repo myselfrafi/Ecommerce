@@ -1,0 +1,18 @@
+{% extends 'homepage.html' %}
+
+
+{% block content %}
+
+<div class="container">
+    <div class="row">
+        <h2 class="bg-warning text-center rounded-3 m-2 p-1">Add Product</h2>
+        <form action="" method="post" enctype="multipart/form-data">
+            {% csrf_token %}
+            {{form}}
+            <input type="submit" value="ADD PRODUCT " class="btn btn-success"> <a href="{% url 'show-products'%}" class="btn btn-primary" style="margin: 15px;">Show Product</a>
+        </form>
+    </div>
+</div>
+  
+
+{% endblock %}

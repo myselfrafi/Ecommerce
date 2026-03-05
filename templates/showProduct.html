@@ -1,0 +1,44 @@
+{% extends 'homepage.html' %}
+
+{% block content %}
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-10 offset-md-1">
+            <h2 class="bg-warning text-center m-1 p-1">
+                Products Information
+            </h2>
+            <a href="{%url 'add-product'%}" class="btn btn-primary" style="float: right; margin: 10px; ">Add Product</a>
+
+            <table class="table table-dark text-white text-center table-bordered table-striped table-hover">
+                <thead>
+                    <tr class="table-primary">
+                        <th>ID</th>
+                        <th>Image</th>
+                        <th>Name</th>
+                        <th>Price</th>
+                    </tr>
+                </thead>
+
+                <tbody>
+                    {% for product in all_products %}
+                    <tr>
+                        <td>{{ product.id }}</td>
+                        <td>
+                            <a href="{% url 'show-one-product' product.id %}">
+                                <img src="{{ product.image.url }}" height="60px" alt="">
+                            </a>
+                        </td>
+                        <td>{{ product.name }}</td>
+                        <td>{{ product.price }}</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+
+            </table>
+
+        </div>
+    </div>
+</div>
+
+{% endblock %}

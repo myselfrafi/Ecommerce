@@ -1,0 +1,53 @@
+{% extends 'homepage.html' %}
+
+{% include 'Navbar.html' %}
+
+{% block content %}
+    
+<h1 align="center">Cart Item Information</h1>
+
+<table align="center" width="750" >
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Image</th>
+            <th>Name</th>
+            <th>Price</th>
+            <th>Quantity</th>
+            <th>Total Price</th>
+        </tr>
+    </thead>
+
+    <tbody>
+        {% for i in cart_items %}
+        <tr>
+            <td>{{ i.product.id }}</td>
+
+            <td>
+                <img src="{{ i.product.image.url }}" height="50" width="50">
+            </td>
+
+            <td>{{ i.product.name }}</td>
+
+            <td>&#8377; {{ i.product.price }}</td>
+
+            <td>
+                <a href="{% url 'reduce-cart-item' i.id %}" class="btn btn-warning">-</a>
+                {{ i.quantity }}
+                <a href="{% url 'add-2-cart' i.product.id %}" class="btn btn-warning">+</a>
+            </td>
+
+            <td>&#8377; {{ i.total_price }}</td>
+            <td>
+                <a href="{% url 'remove-cart-item' i.id %}" class="btn btn-danger">Remove</a>
+            </td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+
+<h3 style="text-align: center; padding: 30px;">Total Card Item Price : &#8377; {{total_cart_items_price}}</h3>
+
+{% endblock %}
+
+{% include 'Footer.html' %}

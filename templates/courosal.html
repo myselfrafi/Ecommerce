@@ -1,0 +1,47 @@
+{% load static %}
+
+  <!--courosal-->
+<div id="carouselExampleCaptions" class="carousel slide">
+  <div class="carousel-indicators">
+    <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+    <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
+    <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>
+  </div>
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+      <a href="{% url 'show-one-product' 9 %}">
+        <img src="{% static 'Images/casual-shoe1.webp' %}"
+      alt="shoe" style="width: 1110px; height: 400px; margin-left: 140px; margin-top:20px; object-fit: fill;"></a>
+      <div class="carousel-caption d-none d-md-block">
+        <h5>casual shoe</h5>
+        <p>Athletic sports shoes built for comfort, grip, and active performance</p>
+      </div>
+    </div>
+    <div class="carousel-item">
+      <a href="{% url 'show-one-product' 14 %}">
+        <img src="{% static 'Images/heels1.webp' %}" alt="heels" style="width: 1100px; height: 400px; margin-left: 140px; margin-top:20px; object-fit: fill;">
+      </a>
+      <div class="carousel-caption d-none d-md-block">
+        <h5>Heels</h5>
+        <p>Heels are stylish women’s footwear designed to elevate height and enhance posture</p>
+      </div>
+    </div>
+    <div class="carousel-item">
+  <a href="{% url 'show-one-product' 4 %}">
+        <img src="{% static 'Images\t-shirt1.webp' %}" alt="T-shirt" style="width: 1110px; height: 400px; margin-left: 140px; margin-top:20px; object-fit: fill;">
+  </a>
+      <div class="carousel-caption d-none d-md-block">
+        <h5>T-Shirt</h5>
+        <p>Stylish orange and black checkered shirt.Designed with a classic collar and full sleeves</p>
+      </div>
+    </div>
+  </div>
+  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Previous</span>
+  </button>
+  <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Next</span>
+  </button>
+</div>

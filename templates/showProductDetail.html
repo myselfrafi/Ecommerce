@@ -1,0 +1,34 @@
+{% extends 'homepage.html' %}
+
+
+{% include 'Navbar.html' %}
+
+   {% block content %}
+
+      <h2 class="bg-primary text-center rounded-3 p-3 m-3">{{one_product.name}} Details
+    
+      </h2>
+      <img src="{{one_product.image.url}}" height="200px" width="150px" style="margin: 20px 20px;" alt="">
+
+      <table style="margin: 20px 20px;">
+        <tr>
+            <th>Food Item :</th>
+            <td>{{one_product.name}}</td>
+        </tr>
+        <tr>
+            <th>Price :</th>
+            <td > <b>&#8377;</b> {{one_product.price}}</td>
+        </tr>
+        <tr>
+            <th>Description :</th>
+            <td>{{one_product.description}}</td>
+        </tr>
+    </table>
+
+    {% endblock %}
+
+{% include 'Footer.html' %}
+
+
+
+
