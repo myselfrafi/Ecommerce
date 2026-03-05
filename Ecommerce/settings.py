@@ -76,25 +76,19 @@ WSGI_APPLICATION = 'Ecommerce.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/6.0/ref/settings/#databases
 
-# Local MySQL Database
-# DATABASES = {
-#     'default': {
-#         'ENGINE': 'django.db.backends.mysql',
-#         'NAME': 'dj_Ecommerce_db',  #authentication_register --->Table Name 
-#         'USER':'root',              #products_product  ------>Table Name
-#         'PASSWORD':'Rafi@786',
-#         'HOST':'localhost',
-#         'PORT':3306
-#     }
-# }
-
-# SQLite Database for Deployment (Render)
-DATABASES = {
+ Local MySQL Database
+ DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
-    }
-}
+         'ENGINE': 'django.db.backends.mysql',
+         'NAME': 'dj_Ecommerce_db',  #authentication_register --->Table Name 
+        'USER':'root',              #products_product  ------>Table Name
+         'PASSWORD':'Rafi@786',
+         'HOST':'localhost',
+         'PORT':3306
+     }
+ }
+
+
 
 
 # Password validation
